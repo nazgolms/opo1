@@ -3,295 +3,329 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
 
-<title>Support Dashboard</title>
+<style>
 
-<link rel="stylesheet" href="style.css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+body{
+background:#f4f4f4;
+}
+
+/* LOGIN */
+
+#loginPage{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#7b2ff7,#a855f7);
+}
+
+.login-box{
+width:350px;
+background:white;
+padding:40px;
+border-radius:20px;
+}
+
+.login-box h1{
+margin-bottom:10px;
+color:#7b2ff7;
+}
+
+.login-box p{
+margin-bottom:20px;
+color:#666;
+}
+
+.login-box input{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ddd;
+}
+
+.login-box button{
+width:100%;
+padding:15px;
+border:none;
+background:#7b2ff7;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+/* DASHBOARD */
+
+#dashboard{
+display:none;
+height:100vh;
+}
+
+.sidebar{
+width:250px;
+background:#6d28d9;
+height:100vh;
+position:fixed;
+left:0;
+top:0;
+padding:20px;
+color:white;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+margin-bottom:40px;
+}
+
+.menu div{
+padding:15px;
+margin-bottom:10px;
+border-radius:10px;
+background:rgba(255,255,255,0.1);
+}
+
+.main{
+margin-left:250px;
+padding:30px;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+}
+
+.card h1{
+margin-top:10px;
+}
+
+.bottom{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+.table-box,
+.performance{
+background:white;
+padding:20px;
+border-radius:15px;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+text-align:left;
+border-bottom:1px solid #eee;
+}
+
+.bar{
+height:10px;
+background:#eee;
+border-radius:20px;
+margin-top:10px;
+margin-bottom:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:#7b2ff7;
+width:80%;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- LOGIN PAGE -->
+<!-- LOGIN -->
 
-<div class="login-container" id="loginPage">
+<div id="loginPage">
 
-    <div class="login-box">
+<div class="login-box">
 
-        <h1>Opofinance</h1>
+<h1>Opofinance</h1>
 
-        <p>Support Team Login</p>
+<p>Support Team Login</p>
 
-        <input type="email" id="email" placeholder="Email Address">
+<input type="email" placeholder="Email">
 
-        <input type="password" id="password" placeholder="Password">
+<input type="password" placeholder="Password">
 
-        <button onclick="login()">Login</button>
+<button onclick="login()">Login</button>
 
-    </div>
+</div>
 
 </div>
 
 <!-- DASHBOARD -->
 
-<div class="dashboard hidden" id="dashboard">
+<div id="dashboard">
 
-    <!-- SIDEBAR -->
+<div class="sidebar">
 
-    <div class="sidebar">
+<div class="logo">
+Opofinance
+</div>
 
-        <div>
+<div class="menu">
 
-            <div class="logo">
-                <i class="fa-solid fa-cube"></i>
-                Opofinance
-            </div>
+<div>Dashboard</div>
 
-            <div class="menu-title">MAIN</div>
+<div>Live Chats</div>
 
-            <ul>
+<div>Tickets</div>
 
-                <li class="active">
-                    <i class="fa-solid fa-table-columns"></i>
-                    Dashboard
-                </li>
+<div>Clients</div>
 
-                <li>
-                    <i class="fa-solid fa-comments"></i>
-                    Live Chats
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-ticket"></i>
-                    Tickets
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-users"></i>
-                    Clients
-                </li>
-
-            </ul>
-
-            <div class="menu-title">TOOLS</div>
-
-            <ul>
-
-                <li>
-                    <i class="fa-solid fa-phone"></i>
-                    Escalations
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-chart-line"></i>
-                    Performance
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-book"></i>
-                    Knowledge Base
-                </li>
-
-            </ul>
-
-        </div>
-
-        <div class="logout">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Sign out
-        </div>
-
-    </div>
-
-    <!-- MAIN -->
-
-    <div class="main-content">
-
-        <!-- TOPBAR -->
-
-        <div class="topbar">
-
-            <h2>Support Dashboard</h2>
-
-            <div class="profile">
-
-                <div>
-
-                    <h4>Raha Rad</h4>
-
-                    <span>Chat Support Agent</span>
-
-                </div>
-
-                <div class="avatar">
-                    AV
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- GREETING -->
-
-        <div class="welcome">
-
-            <h1>Good morning, Raha 👋</h1>
-
-            <p>Here's your support overview for today</p>
-
-        </div>
-
-        <!-- STATS -->
-
-        <div class="cards">
-
-            <div class="card">
-
-                <span>Open Tickets</span>
-
-                <h1>24</h1>
-
-                <small class="red">+4 since yesterday</small>
-
-            </div>
-
-            <div class="card">
-
-                <span>Resolved Today</span>
-
-                <h1>11</h1>
-
-                <small class="green">On track</small>
-
-            </div>
-
-            <div class="card">
-
-                <span>Avg Response Time</span>
-
-                <h1>3.2m</h1>
-
-                <small class="blue">Target: 5m</small>
-
-            </div>
-
-            <div class="card">
-
-                <span>CSAT Score</span>
-
-                <h1>94%</h1>
-
-                <small class="green">Excellent</small>
-
-            </div>
-
-        </div>
-
-        <!-- BOTTOM -->
-
-        <div class="bottom">
-
-            <!-- TABLE -->
-
-            <div class="table-box">
-
-                <h3>Recent Tickets</h3>
-
-                <table>
-
-                    <tr>
-                        <th>TICKET</th>
-                        <th>CLIENT</th>
-                        <th>ISSUE</th>
-                        <th>PRIORITY</th>
-                        <th>STATUS</th>
-                    </tr>
-
-                    <tr>
-                        <td>#5821</td>
-                        <td>Alex M.</td>
-                        <td>Withdrawal delay</td>
-                        <td><span class="high">High</span></td>
-                        <td><span class="open">Open</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>#5820</td>
-                        <td>Mona K.</td>
-                        <td>Verification docs</td>
-                        <td><span class="medium">Medium</span></td>
-                        <td><span class="progress">In Progress</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>#5819</td>
-                        <td>Mobin R.</td>
-                        <td>Paria issue</td>
-                        <td><span class="low">Low</span></td>
-                        <td><span class="resolved">Resolved</span></td>
-                    </tr>
-
-                </table>
-
-            </div>
-
-            <!-- PERFORMANCE -->
-
-            <div class="performance">
-
-                <h3>Today's Performance</h3>
-
-                <div class="item">
-
-                    <div class="label">
-                        <span>Tickets handled</span>
-                        <span>11 / 20</span>
-                    </div>
-
-                    <div class="bar">
-                        <div class="fill1"></div>
-                    </div>
-
-                </div>
-
-                <div class="item">
-
-                    <div class="label">
-                        <span>First contact resolution</span>
-                        <span>73%</span>
-                    </div>
-
-                    <div class="bar">
-                        <div class="fill2"></div>
-                    </div>
-
-                </div>
-
-                <div class="item">
-
-                    <div class="label">
-                        <span>Client satisfaction</span>
-                        <span>94%</span>
-                    </div>
-
-                    <div class="bar">
-                        <div class="fill3"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+<div>Performance</div>
 
 </div>
 
-<script src="script.js"></script>
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<h2>Support Dashboard</h2>
+
+<h4>Ardalan Varshowsaz</h4>
+
+</div>
+
+<h1 style="margin-bottom:20px;">
+Good Morning 👋
+</h1>
+
+<div class="cards">
+
+<div class="card">
+<span>Open Tickets</span>
+<h1>24</h1>
+</div>
+
+<div class="card">
+<span>Resolved Today</span>
+<h1>11</h1>
+</div>
+
+<div class="card">
+<span>Response Time</span>
+<h1>3.2m</h1>
+</div>
+
+<div class="card">
+<span>CSAT</span>
+<h1>94%</h1>
+</div>
+
+</div>
+
+<div class="bottom">
+
+<div class="table-box">
+
+<h3>Recent Tickets</h3>
+
+<table>
+
+<tr>
+<th>Ticket</th>
+<th>Client</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>#5821</td>
+<td>Sarah</td>
+<td>Open</td>
+</tr>
+
+<tr>
+<td>#5822</td>
+<td>James</td>
+<td>Resolved</td>
+</tr>
+
+<tr>
+<td>#5823</td>
+<td>Lena</td>
+<td>Pending</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="performance">
+
+<h3>Performance</h3>
+
+<p>Tickets handled</p>
+
+<div class="bar">
+<div class="fill"></div>
+</div>
+
+<p>Client Satisfaction</p>
+
+<div class="bar">
+<div class="fill" style="width:94%"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+document.getElementById("loginPage").style.display = "none";
+
+document.getElementById("dashboard").style.display = "block";
+
+}
+
+</script>
 
 </body>
 </html>
