@@ -1,23 +1,18 @@
-function login() {
+function login(){
+
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  if (email && password) {
-    localStorage.setItem("loggedIn", "true");
-    window.location.href = "dashboard.html";
+  if(email && password){
+
+    document.getElementById("loginPage").style.display = "none";
+
+    document.getElementById("dashboard").classList.remove("hidden");
+
   } else {
-    alert("Enter email and password");
+
+    alert("Please enter email and password");
+
   }
-}
 
-function logout() {
-  localStorage.removeItem("loggedIn");
-  window.location.href = "login.html";
-}
-
-function showSection(id) {
-  const sections = document.querySelectorAll(".section");
-
-  sections.forEach(s => s.classList.add("hidden"));
-  document.getElementById(id).classList.remove("hidden");
 }
