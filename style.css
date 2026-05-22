@@ -1,84 +1,86 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.auth-body {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  font-family: Arial;
   background: #0f172a;
-}
-
-.auth-container {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.auth-container input {
-  padding: 10px;
-}
-
-.auth-container button {
-  padding: 10px;
-  background: #2563eb;
   color: white;
-  border: none;
+}
+
+/* LOGIN */
+.container {
+  width: 300px;
+  margin: 100px auto;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
-.dashboard-body {
+/* DASHBOARD */
+.layout {
   display: flex;
 }
 
+/* SIDEBAR */
 .sidebar {
-  width: 220px;
+  width: 200px;
   background: #111827;
-  color: white;
   height: 100vh;
-  padding: 20px;
+  padding: 10px;
 }
 
-.sidebar a {
-  display: block;
+.sidebar button {
+  background: none;
+  border: none;
   color: white;
-  text-decoration: none;
-  margin: 10px 0;
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.main {
+.sidebar button:hover {
+  background: #1f2937;
+}
+
+/* CONTENT */
+.content {
   flex: 1;
   padding: 20px;
-  background: #f3f4f6;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+.hidden {
+  display: none;
 }
 
-.avatar {
-  background: #2563eb;
-  color: white;
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #334155;
   padding: 10px;
-  border-radius: 50%;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+  background: #1e293b;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
 }
