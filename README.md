@@ -1,69 +1,83 @@
-Opofinance Support Dashboard
+# Opofinance Support Dashboard
 
-🧭 Introduction
+## 🧭 Introduction
 
 The Opofinance Support Dashboard is a modern, scalable frontend application designed to streamline support operations. It provides a unified interface for managing tickets, live chats, clients, and performance metrics with a strong focus on usability, performance, and extensibility.
 
-This project is currently implemented as a frontend-only (consumer) system, but its architecture allows seamless integration with backend services and APIs.
+This project is currently implemented as a **frontend-only (consumer) system**, but its architecture allows seamless integration with backend services and APIs.
 
-🏗️ System Architecture
+---
 
-Current Architecture (Frontend Only)
+## 🏗️ System Architecture
 
-Static SPA-like structure (Single Page Application behavior)
-Modular JavaScript architecture
-Component-based UI separation (via CSS & JS modules)
-Future Architecture (Scalable Design)
+### Current Architecture (Frontend Only)
 
-Backend integration (REST APIs)
-Authentication service (JWT / OAuth)
-Real-time updates (WebSockets)
-⚙️ Core Modules
+* Static SPA-like structure (Single Page Application behavior)
+* Modular JavaScript architecture
+* Component-based UI separation (via CSS & JS modules)
 
-1. Authentication Module
+### Future Architecture (Scalable Design)
 
-Login & Signup UI
-Extendable for backend authentication
-Prepared for token-based systems
-2. Dashboard Module
+* Backend integration (REST APIs)
+* Authentication service (JWT / OAuth)
+* Real-time updates (WebSockets)
 
-Displays key performance indicators:
+---
 
-Open Tickets
-Resolved Tickets
-Response Time
-CSAT Score
-Animated counters (incremental rendering)
+## ⚙️ Core Modules
 
-3. Navigation Module
+### 1. Authentication Module
 
-Sidebar-based navigation system
-SPA behavior (no page reload)
-Active state management
-4. Charts Module
+* Login & Signup UI
+* Extendable for backend authentication
+* Prepared for token-based systems
 
-Data visualization powered by Chart.js
-Animated rendering from zero state
-Easily replaceable with dynamic API data
-5. UI/UX Module
+### 2. Dashboard Module
 
-Modern design system (Purple / Blue / Black palette)
-Micro-interactions & hover effects
-Responsive layout system
-6. Theme System
+* Displays key performance indicators:
 
-Light / Dark mode toggle
-Centralized theme control via CSS classes
-7. Internationalization (i18n)
+  * Open Tickets
+  * Resolved Tickets
+  * Response Time
+  * CSAT Score
+* Animated counters (incremental rendering)
 
-Dual-language support:
+### 3. Navigation Module
 
-English (LTR)
-Persian (RTL)
-Dynamic text replacement using data-* attributes
+* Sidebar-based navigation system
+* SPA behavior (no page reload)
+* Active state management
 
-📁 Project Structure
+### 4. Charts Module
 
+* Data visualization powered by Chart.js
+* Animated rendering from zero state
+* Easily replaceable with dynamic API data
+
+### 5. UI/UX Module
+
+* Modern design system (Purple / Blue / Black palette)
+* Micro-interactions & hover effects
+* Responsive layout system
+
+### 6. Theme System
+
+* Light / Dark mode toggle
+* Centralized theme control via CSS classes
+
+### 7. Internationalization (i18n)
+
+* Dual-language support:
+
+  * English (LTR)
+  * Persian (RTL)
+* Dynamic text replacement using `data-*` attributes
+
+---
+
+## 📁 Project Structure
+
+```id="m3n9az"
 my-dashboard/
 │
 ├── index.html
@@ -87,92 +101,127 @@ my-dashboard/
 │   └── charts.js          # Chart initialization
 │
 └── assets/                # Images / icons (optional)
-🔌 Functional Breakdown
+```
 
-🔢 Animated Counters
+---
 
-All metric values are initialized at 0 and increment dynamically to their final values using JavaScript logic.
+## 🔌 Functional Breakdown
 
-📊 Chart Rendering
+### 🔢 Animated Counters
+
+All metric values are initialized at `0` and increment dynamically to their final values using JavaScript logic.
+
+### 📊 Chart Rendering
 
 Charts are initialized using Chart.js and animated on load.
 
-🔄 Page Switching
+### 🔄 Page Switching
 
-Implemented without full reload
-Controlled via DOM class toggling
-Improves performance and UX
-🌙 Theme Engine
+* Implemented without full reload
+* Controlled via DOM class toggling
+* Improves performance and UX
 
-Controlled through theme.js
-Applies global class (theme-dark / theme-light) to <body>
-🌍 Language Engine
+### 🌙 Theme Engine
 
-Uses data-en and data-fa
-Dynamically swaps content
-Switches layout direction (LTR ↔ RTL)
-🧪 Extensibility & Scalability
+* Controlled through `theme.js`
+* Applies global class (`theme-dark` / `theme-light`) to `<body>`
 
-Ready for Backend Integration:
+### 🌍 Language Engine
 
-Replace static data with API responses
-Add authentication layer (JWT)
-Integrate database-driven content
-Suggested Enhancements:
+* Uses `data-en` and `data-fa`
+* Dynamically swaps content
+* Switches layout direction (LTR ↔ RTL)
 
-Real-time updates (WebSockets)
-Role-based access control (RBAC)
-Notification system
-Error handling layer
-📡 API Design (Future Implementation)
+---
 
-If the project evolves into a provider system, APIs should follow REST principles:
+## 🧪 Extensibility & Scalability
 
-Example Endpoints:
+### Ready for Backend Integration:
 
+* Replace static data with API responses
+* Add authentication layer (JWT)
+* Integrate database-driven content
+
+### Suggested Enhancements:
+
+* Real-time updates (WebSockets)
+* Role-based access control (RBAC)
+* Notification system
+* Error handling layer
+
+---
+
+## 📡 API Design (Future Implementation)
+
+If the project evolves into a **provider system**, APIs should follow REST principles:
+
+### Example Endpoints:
+
+```id="api1"
 GET    /api/tickets
 POST   /api/tickets
 GET    /api/clients
 GET    /api/performance
-Response Format:
+```
 
+### Response Format:
+
+```json id="api2"
 {
   "status": "success",
   "data": [],
   "message": ""
 }
-🛠️ Technologies
+```
 
-HTML5
-CSS3 (Modular Architecture)
-JavaScript (ES6+)
-Chart.js
-Google Fonts
-🚀 Deployment
+---
 
-GitHub Pages
+## 🛠️ Technologies
+
+* HTML5
+* CSS3 (Modular Architecture)
+* JavaScript (ES6+)
+* Chart.js
+* Google Fonts
+
+---
+
+## 🚀 Deployment
+
+### GitHub Pages
 
 Ensure correct structure:
 
-Use relative paths (./css/..., ./js/...)
-All assets must exist in repository
-Local Development
+* Use relative paths (`./css/...`, `./js/...`)
+* All assets must exist in repository
 
-Simply open index.html in browser
+### Local Development
 
-⚠️ Known Limitations
+Simply open `index.html` in browser
 
-No backend integration yet
-Static/mock data
-No authentication logic implemented
-🧠 Design Philosophy
+---
 
-Simplicity over complexity
-Modular and maintainable structure
-Scalable for future backend integration
-Clean and modern UI/UX
-📌 Conclusion
+## ⚠️ Known Limitations
+
+* No backend integration yet
+* Static/mock data
+* No authentication logic implemented
+
+---
+
+## 🧠 Design Philosophy
+
+* Simplicity over complexity
+* Modular and maintainable structure
+* Scalable for future backend integration
+* Clean and modern UI/UX
+
+---
+
+## 📌 Conclusion
 
 This project demonstrates a production-ready frontend dashboard architecture that can evolve into a fully functional support system with backend integration.
 
-It is suitable as a foundation for SaaS dashboards, admin panels, and customer support platforms
+It is suitable as a foundation for SaaS dashboards, admin panels, and customer support platforms.
+
+---
