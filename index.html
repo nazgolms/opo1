@@ -1,249 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Support Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Support Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 </head>
+
 <body>
 
-  <!-- LOGIN PAGE -->
-  <div class="login-page" id="loginPage">
+<!-- LOGIN PAGE -->
+
+<div class="login-container" id="loginPage">
+
     <div class="login-box">
-      <h1>Opifinance</h1>
-      <p>Support Team Portal</p>
 
-      <input type="email" placeholder="Email Address" id="email">
-      <input type="password" placeholder="Password" id="password">
+        <h1>Opofinance</h1>
 
-      <button onclick="login()">Login</button>
+        <p>Support Team Login</p>
 
-      <span class="demo-text">
-        Demo Login — any email & password works
-      </span>
+        <input type="email" id="email" placeholder="Email Address">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
     </div>
-  </div>
 
-  <!-- DASHBOARD -->
-  <div class="dashboard hidden" id="dashboard">
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="dashboard hidden" id="dashboard">
 
     <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div>
-        <div class="logo">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Opifinance</span>
-        </div>
 
-        <div class="menu-title">MAIN</div>
+    <div class="sidebar">
 
-        <ul class="menu">
-          <li class="active">
-            <i class="fa-solid fa-table-columns"></i>
-            Dashboard
-          </li>
+        <div>
 
-          <li>
-            <i class="fa-solid fa-comments"></i>
-            Live Chats
-          </li>
-
-          <li>
-            <i class="fa-solid fa-ticket"></i>
-            Tickets
-          </li>
-
-          <li>
-            <i class="fa-solid fa-users"></i>
-            Clients
-          </li>
-        </ul>
-
-        <div class="menu-title">TOOLS</div>
-
-        <ul class="menu">
-          <li>
-            <i class="fa-solid fa-phone"></i>
-            Escalations
-          </li>
-
-          <li>
-            <i class="fa-solid fa-chart-line"></i>
-            Performance
-          </li>
-
-          <li>
-            <i class="fa-solid fa-book"></i>
-            Knowledge Base
-          </li>
-        </ul>
-      </div>
-
-      <div class="logout">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Sign out
-      </div>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-
-      <!-- TOP BAR -->
-      <div class="topbar">
-        <h2>Support Dashboard</h2>
-
-        <div class="profile">
-          <div>
-            <h4>Raha Rad</h4>
-            <span>Chat Support Agent</span>
-          </div>
-
-          <div class="avatar">AV</div>
-        </div>
-      </div>
-
-      <!-- GREETING -->
-      <div class="greeting">
-        <h1>Good morning, Nazgol 👋</h1>
-        <p>Here's your support overview for today</p>
-      </div>
-
-      <!-- STATS -->
-      <div class="stats-grid">
-
-        <div class="card">
-          <span>Open Tickets</span>
-          <h1>24</h1>
-          <small class="red">+4 since yesterday</small>
-        </div>
-
-        <div class="card">
-          <span>Resolved Today</span>
-          <h1>11</h1>
-          <small class="green">On track</small>
-        </div>
-
-        <div class="card">
-          <span>Avg Response Time</span>
-          <h1>3.2m</h1>
-          <small class="blue">Target: 5m</small>
-        </div>
-
-        <div class="card">
-          <span>CSAT Score</span>
-          <h1>94%</h1>
-          <small class="green">Excellent</small>
-        </div>
-
-      </div>
-
-      <!-- TABLE + PERFORMANCE -->
-      <div class="bottom-grid">
-
-        <div class="table-card">
-          <div class="table-title">Recent Tickets</div>
-
-          <table>
-            <thead>
-              <tr>
-                <th>Ticket</th>
-                <th>Client</th>
-                <th>Issue</th>
-                <th>Priority</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>#5821</td>
-                <td>Alex M.</td>
-                <td>Withdrawal delay</td>
-                <td><span class="priority high">High</span></td>
-                <td><span class="status open">Open</span></td>
-              </tr>
-
-              <tr>
-                <td>#5820</td>
-                <td>Mona B.</td>
-                <td>Verification docs</td>
-                <td><span class="priority medium">Medium</span></td>
-                <td><span class="status progress">In Progress</span></td>
-              </tr>
-
-              <tr>
-                <td>#5819</td>
-                <td>Mobin K.</td>
-                <td>Login issue</td>
-                <td><span class="priority low">Low</span></td>
-                <td><span class="status resolved">Resolved</span></td>
-              </tr>
-
-              <tr>
-                <td>#5817</td>
-                <td>Leila D.</td>
-                <td>Deposit not credited</td>
-                <td><span class="priority high">High</span></td>
-                <td><span class="status open">Open</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- PERFORMANCE -->
-        <div class="performance-card">
-          <h3>Today's Performance</h3>
-
-          <div class="progress-item">
-            <div class="label">
-              <span>Tickets handled</span>
-              <span>11 / 20</span>
+            <div class="logo">
+                <i class="fa-solid fa-cube"></i>
+                Opofinance
             </div>
-            <div class="bar">
-              <div class="fill fill1"></div>
-            </div>
-          </div>
 
-          <div class="progress-item">
-            <div class="label">
-              <span>First contact resolution</span>
-              <span>73%</span>
-            </div>
-            <div class="bar">
-              <div class="fill fill2"></div>
-            </div>
-          </div>
+            <div class="menu-title">MAIN</div>
 
-          <div class="progress-item">
-            <div class="label">
-              <span>Client satisfaction</span>
-              <span>94%</span>
-            </div>
-            <div class="bar">
-              <div class="fill fill3"></div>
-            </div>
-          </div>
+            <ul>
 
-          <div class="progress-item">
-            <div class="label">
-              <span>Chats active now</span>
-              <span>3</span>
-            </div>
-            <div class="bar">
-              <div class="fill fill4"></div>
-            </div>
-          </div>
+                <li class="active">
+                    <i class="fa-solid fa-table-columns"></i>
+                    Dashboard
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-comments"></i>
+                    Live Chats
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-ticket"></i>
+                    Tickets
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-users"></i>
+                    Clients
+                </li>
+
+            </ul>
+
+            <div class="menu-title">TOOLS</div>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    Escalations
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Performance
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-book"></i>
+                    Knowledge Base
+                </li>
+
+            </ul>
 
         </div>
 
-      </div>
+        <div class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign out
+        </div>
 
-    </main>
-  </div>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- MAIN -->
+
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h2>Support Dashboard</h2>
+
+            <div class="profile">
+
+                <div>
+
+                    <h4>Raha Rad</h4>
+
+                    <span>Chat Support Agent</span>
+
+                </div>
+
+                <div class="avatar">
+                    AV
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- GREETING -->
+
+        <div class="welcome">
+
+            <h1>Good morning, Raha 👋</h1>
+
+            <p>Here's your support overview for today</p>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <span>Open Tickets</span>
+
+                <h1>24</h1>
+
+                <small class="red">+4 since yesterday</small>
+
+            </div>
+
+            <div class="card">
+
+                <span>Resolved Today</span>
+
+                <h1>11</h1>
+
+                <small class="green">On track</small>
+
+            </div>
+
+            <div class="card">
+
+                <span>Avg Response Time</span>
+
+                <h1>3.2m</h1>
+
+                <small class="blue">Target: 5m</small>
+
+            </div>
+
+            <div class="card">
+
+                <span>CSAT Score</span>
+
+                <h1>94%</h1>
+
+                <small class="green">Excellent</small>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+
+        <div class="bottom">
+
+            <!-- TABLE -->
+
+            <div class="table-box">
+
+                <h3>Recent Tickets</h3>
+
+                <table>
+
+                    <tr>
+                        <th>TICKET</th>
+                        <th>CLIENT</th>
+                        <th>ISSUE</th>
+                        <th>PRIORITY</th>
+                        <th>STATUS</th>
+                    </tr>
+
+                    <tr>
+                        <td>#5821</td>
+                        <td>Alex M.</td>
+                        <td>Withdrawal delay</td>
+                        <td><span class="high">High</span></td>
+                        <td><span class="open">Open</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#5820</td>
+                        <td>Mona K.</td>
+                        <td>Verification docs</td>
+                        <td><span class="medium">Medium</span></td>
+                        <td><span class="progress">In Progress</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#5819</td>
+                        <td>Mobin R.</td>
+                        <td>Paria issue</td>
+                        <td><span class="low">Low</span></td>
+                        <td><span class="resolved">Resolved</span></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- PERFORMANCE -->
+
+            <div class="performance">
+
+                <h3>Today's Performance</h3>
+
+                <div class="item">
+
+                    <div class="label">
+                        <span>Tickets handled</span>
+                        <span>11 / 20</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="fill1"></div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+
+                    <div class="label">
+                        <span>First contact resolution</span>
+                        <span>73%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="fill2"></div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+
+                    <div class="label">
+                        <span>Client satisfaction</span>
+                        <span>94%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="fill3"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
