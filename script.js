@@ -1,18 +1,23 @@
 function login() {
-  window.location.href = "dashboard.html";
-}
-
-function register() {
-  window.location.href = "dashboard.html";
-}
-
-function login() {
-  const email = document.getElementById("nazgol76@gmail.com").value;
-  const password = document.getElementById("123456").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
   if (email && password) {
+    localStorage.setItem("loggedIn", "true");
     window.location.href = "dashboard.html";
   } else {
-    alert("nazgol76@gmail.com 123456");
+    alert("Enter email and password");
   }
+}
+
+function logout() {
+  localStorage.removeItem("loggedIn");
+  window.location.href = "login.html";
+}
+
+function showSection(id) {
+  const sections = document.querySelectorAll(".section");
+
+  sections.forEach(s => s.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
 }
