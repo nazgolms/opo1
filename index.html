@@ -203,22 +203,206 @@ Opofinance
 
 <div class="menu">
 
-<div>Dashboard</div>
+<div onclick="showPage('dashboardPage')">
+📊 Dashboard
+</div>
 
-<div>Live Chats</div>
+<div onclick="showPage('chatPage')">
+💬 Live Chats
+</div>
 
-<div>Tickets</div>
+<div onclick="showPage('ticketsPage')">
+🎫 Tickets
+</div>
 
-<div>Clients</div>
+<div onclick="showPage('clientsPage')">
+👥 Clients
+</div>
 
-<div>Performance</div>
+<div onclick="showPage('performancePage')">
+📈 Performance
+</div>
 
 </div>
 
 </div>
 
 <div class="main">
+<div class="main">
 
+<!-- DASHBOARD PAGE -->
+
+<div id="dashboardPage">
+
+<div class="topbar">
+<h2>Support Dashboard</h2>
+<h4>Ardalan Varshowsaz</h4>
+</div>
+
+<h1 style="margin-bottom:20px;">
+Good Morning 👋
+</h1>
+
+<div class="cards">
+
+<div class="card">
+<span>Open Tickets</span>
+<h1>24</h1>
+</div>
+
+<div class="card">
+<span>Resolved Today</span>
+<h1>11</h1>
+</div>
+
+<div class="card">
+<span>Response Time</span>
+<h1>3.2m</h1>
+</div>
+
+<div class="card">
+<span>CSAT</span>
+<h1>94%</h1>
+</div>
+
+</div>
+
+</div>
+
+<!-- LIVE CHAT PAGE -->
+
+<div id="chatPage" style="display:none;">
+
+<h1>💬 Live Chats</h1>
+
+<br>
+
+<div class="table-box">
+
+<table>
+
+<tr>
+<th>Client</th>
+<th>Message</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Sarah</td>
+<td>Hello I need help with withdrawal</td>
+<td>Online</td>
+</tr>
+
+<tr>
+<td>James</td>
+<td>I can't login</td>
+<td>Waiting</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- TICKETS PAGE -->
+
+<div id="ticketsPage" style="display:none;">
+
+<h1>🎫 Tickets</h1>
+
+<br>
+
+<div class="table-box">
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Issue</th>
+<th>Priority</th>
+</tr>
+
+<tr>
+<td>#5821</td>
+<td>Withdrawal Delay</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td>#5822</td>
+<td>KYC Verification</td>
+<td>Medium</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- CLIENTS PAGE -->
+
+<div id="clientsPage" style="display:none;">
+
+<h1>👥 Clients</h1>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Sarah M.</h3>
+<p>VIP Client</p>
+</div>
+
+<div class="card">
+<h3>James K.</h3>
+<p>Standard Client</p>
+</div>
+
+<div class="card">
+<h3>Omar F.</h3>
+<p>Gold Client</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- PERFORMANCE PAGE -->
+
+<div id="performancePage" style="display:none;">
+
+<h1>📈 Performance</h1>
+
+<br>
+
+<div class="performance">
+
+<p>Tickets handled</p>
+
+<div class="bar">
+<div class="fill"></div>
+</div>
+
+<p>Client Satisfaction</p>
+
+<div class="bar">
+<div class="fill" style="width:94%"></div>
+</div>
+
+<p>Response Speed</p>
+
+<div class="bar">
+<div class="fill" style="width:70%"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
 <div class="topbar">
 
 <h2>Support Dashboard</h2>
@@ -326,6 +510,36 @@ document.getElementById("dashboard").style.display = "block";
 }
 
 </script>
+<script>
 
+function login(){
+
+document.getElementById("loginPage").style.display = "none";
+
+document.getElementById("dashboard").style.display = "block";
+
+}
+
+function showPage(pageId){
+
+let pages = [
+'dashboardPage',
+'chatPage',
+'ticketsPage',
+'clientsPage',
+'performancePage'
+];
+
+pages.forEach(function(page){
+
+document.getElementById(page).style.display = 'none';
+
+});
+
+document.getElementById(pageId).style.display = 'block';
+
+}
+
+</script>
 </body>
 </html>
